@@ -163,7 +163,7 @@ docker exec -it deployment-kafka-1 kafka-console-consumer \
 
 FraudAnalyzer consume eventos del topic `shieldflow.transaction.received` publicados por **ShieldFlow**.
 
-**Repositorio ShieldFlow:** [Link al repo]
+**Repositorio ShieldFlow:** [[Link al repo](https://github.com/ManuelCarrascalPragma/reactive-event-driven-scaffold/tree/develop/shieldFlow)]
 
 **Topics Kafka:**
 - **Consume:** `shieldflow.transaction.received`
