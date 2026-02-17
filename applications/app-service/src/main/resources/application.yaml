@@ -1,0 +1,40 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: "fraud-analyzer"
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5433/fraudanalyzer_db
+    username: postgres
+    password: postgres
+  sql:
+    init:
+      mode: never
+  kafka:
+    bootstrap-servers: "localhost:9092"
+
+reactive:
+  commons:
+    kafka:
+      app:
+        connectionProperties:
+          bootstrap-servers: "localhost:9092"
+          group-id: "fraud-analyzer-group"
+
+dlq:
+  topic: "shieldflow.transaction.received.dlq"
+
+events:
+  topics:
+    fraud-result: "fraudanalyzer.result"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,metrics"
+
+logging:
+  level:
+    reactor.kafka: DEBUG
